@@ -5,7 +5,7 @@
 
 #!/bin/bash
 
-# Validate number input (1-10)
+# Validate number inputs (1-10)
 while true; do
     read -p "Enter a number (1-10): " number
     if [[ "$number" =~ ^[0-9]+$ ]] && (( number >= 1 && number <= 10 )); then
@@ -34,7 +34,7 @@ if [ "$table_type" == "f" ]; then
     done
 
 elif [ "$table_type" == "p" ]; then
-    # Validate start and the end inputs (1-10 and start <= end)
+    # Validate all start and the end inputs (1-10 and start <= end)
     while true; do
         # Validate start
         while true; do
