@@ -19,7 +19,7 @@
 
 ---
 
-## 📌 Project Overviews
+## 📌 Project Overview
 
 This capstone project demonstrates Linux shell scripting skills by creating a dynamic **Multiplication Table Generator** using **Bash scripting**. The project follows structured development with **Git for version control** and showcases best practices in shell scripting, input validation, and troubleshooting.
 

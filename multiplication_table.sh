@@ -5,7 +5,7 @@
 
 #!/bin/bash
 
-# Validate number inputs (1-10)
+# Validate number input (1-10)
 while true; do
     read -p "Enter a number (1-10): " number
     if [[ "$number" =~ ^[0-9]+$ ]] && (( number >= 1 && number <= 10 )); then
