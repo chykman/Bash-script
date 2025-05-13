@@ -1,27 +1,38 @@
 #!/bin/bash
-
-# This is a single-line comment in Bash
-echo "Hello, you are learning Bash Scripting on DAREY.IO!" # This is also a comment, following a command
-
-
-# This is another way to create
-# a multi-line comment. Each line
-# is prefixed with a # symbol.
-echo "Here is an actual code that gets executed"
-
-#!/bin/bash
-# This script demonstrates the use of Bash comments and performs basic file system operations.
-# It creates a new directory, lists its contents, and displays a success message.
-# The purpose is to showcase single-line and multi-line comments, as well as practical functionality.
+# This script demonstrates Bash scripting with comments for educational purposes.
+# It creates a directory named 'test_folder', lists directory contents before and after creation,
+# verifies the operations, and displays a success message.
+# The script includes error handling to ensure reliability.
 # Author: [Your Name]
 # Date: May 13, 2025
 
-# Create a new directory named 'test_folder' with inline comment explaining the step
-mkdir test_folder  # This command creates a directory called 'test_folder'
+# Step 1: List current directory contents before creating a new directory
+echo "Listing current directory contents before creating 'test_folder':"
+ls -l  # Show the current directory contents for comparison
 
-# Change to the new directory and list its contents
-cd test_folder     # Navigate into the 'test_folder' directory
-ls -l              # List the directory contents in long format to verify creation
+# Step 2: Create a new directory named 'test_folder' with error handling
+if mkdir test_folder 2>/dev/null; then
+    echo "Directory 'test_folder' created successfully."  # Confirm directory creation
+else
+    echo "Error: Failed to create 'test_folder'. Check permissions or if it already exists." >&2
+    exit 1  # Exit with error code if directory creation fails
+fi
 
-# Display a success message
-echo "Directory 'test_folder' has been created and listed successfully!"  # Inform the user of successful execution
+# Step 3: List the parent directory again to show the new directory
+echo "Listing current directory contents after creating 'test_folder':"
+ls -l  # Show updated directory contents to verify creation
+
+# Step 4: Navigate into the new directory with error handling
+if cd test_folder; then
+    echo "Successfully navigated into 'test_folder'."  # Confirm navigation
+else
+    echo "Error: Failed to navigate into 'test_folder'." >&2
+    exit 1  # Exit with error code if navigation fails
+fi
+
+# Step 5: List contents of the new directory (even if empty) with context
+echo "Listing contents of 'test_folder' (currently empty as no files are added):"
+ls -l  # List contents of the new directory; will be empty since it's newly created
+
+# Step 6: Display a final success message
+echo "Directory 'test_folder' has been created, verified, and listed successfully!"
